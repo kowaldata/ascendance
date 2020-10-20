@@ -13696,6 +13696,15 @@ In some situations, the sources might even be a dozen kilometers away from our p
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><p style="text-align: center;">The data points being part of a given thermal (in orange) have been used to estimate the coordinates of its source (in blue). </p></strong>
+ <img src="source.png" width="500"  /></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
@@ -13775,7 +13784,7 @@ In some situations, the sources might even be a dozen kilometers away from our p
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3>8. Removing outliers and saving</h3>
+<h3>8. Saving</h3>
 </div>
 </div>
 </div>
@@ -13787,19 +13796,6 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remove outliers </span>
 <span class="n">ef</span> <span class="o">=</span> <span class="n">ef</span><span class="p">[</span><span class="n">ef</span><span class="p">[</span><span class="s1">&#39;Average_vertical_speed&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="p">]</span>
 <span class="n">ef</span> <span class="o">=</span> <span class="n">ef</span><span class="p">[</span><span class="n">ef</span><span class="p">[</span><span class="s1">&#39;wind_speed&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">45</span> <span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save</span> <span class="o">=</span> <span class="n">ef</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;/Users/kowalrobert/Desktop/Ascendance_all.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13828,7 +13824,7 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save</span> <span class="o">=</span> <span class="n">ef</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;/Users/kowalrobert/Desktop/Ascendance_git.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save</span> <span class="o">=</span> <span class="n">ef</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;/Users/kowalrobert/Desktop/Ascendance.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>

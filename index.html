@@ -13092,7 +13092,6 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">radians</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">arctan2</span><span class="p">,</span> <span class="n">degrees</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
 </pre></div>
 
     </div>
@@ -13110,12 +13109,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Having no engines, gliders pilots are constantly falling. To stay aloft for several hours while crossing hundreds of kilometers, they will regain altitude by circling in thermals (rising warm air). This project aims to determine areas which are easily triggering those thermals.</p>
+<p>Having no engines, gliders pilots are constantly looking for lift clues in the air. Staying aloft for several hours while crossing hundreds of kilometers, require multiple gains of altitude. They will do it by circling in rising warm air which are basically called 'thermals'. This project aims to determine areas, close to Buno's airfield, which are easily triggering those thermals.</p>
 <p><img src="glider_path.jpg" width="500"  /></p>
-<p>A thermal source can be defined as an area in which the character of the air is changed to make it lighter than the surrounding air, such that it ascends. Thermal sources cause an instability of the air at the surface.</p>
-<p>Solar energy passing through earth's atmosphere, will heat the ground in a non-equivalent way due to the <strong>composition</strong> and <strong>topography</strong> of the ground is causing the instability. At a given moment, a triggering event will lead this warmer air to "take off" from the surface.</p>
+<p>A thermal source can be defined as an area in which the character of the air is changed to make it lighter than the surrounding air, such that it ascends. Solar energy passing through earth's atmosphere, will be heating the ground in a non-equivalent way due to the ground <strong>composition</strong> and <strong>topography</strong>. At a given moment, a triggering event will lead the warmer air to "take off" from the surface.</p>
 <p><img src="rising_air.jpg" width="500"  /></p>
-<p>Now, while flying, the source of the thermal is rarely beneath our feet as the <strong>speed</strong> and the <strong>direction</strong> of wind affect the thermals shapes.
+<p>Now, while flying, the source of the thermal is rarely beneath our feet as the <strong>speed</strong> and the <strong>direction</strong> of the wind affect the thermals shapes.
 In some situations, the sources might even be a dozen kilometers away from our position, making it harder for us to determine with precision the origin of the thermal.</p>
 
 </div>
@@ -13147,8 +13145,8 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After their flights, glider pilots can save an extract of the flight records and view their path in the same way that you would view your run with a running app.</p>
-<p>Having close to one thousand extracts sorted in different folders, we will be using os and a foor lop to list all of them.</p>
+<p>After their flights, glider pilots can save an extract of the flight records and view their path, in the same way that you would view your run with a running app.</p>
+<p>Having close to one thousand extracts sorted in different folders, we will be using os and a for loop to list them all.</p>
 
 </div>
 </div>
@@ -13188,8 +13186,8 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Those files are in a text format. They might contain up to 40 000 records depending on the flight duration and the logger settings as the pilot can choose to record its position every second or two.</p>
-<p>Within those files, the header contains general information about the fligt such as the day, the pilot name, the glider type, etc.</p>
+<p>Those files are in a text format. Depending on the flight duration and the logger settings (the pilot can choose to record its position every second or two), they might contain up to 40 000 records.</p>
+<p>Within those files, the header contains general information about the flight such as the day, the pilot name, the glider type, etc.</p>
 
 </div>
 </div>
@@ -13211,7 +13209,6 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <li>GPS coordinates</li>
 <li>Altitude</li>
 </ul>
-<p>The Raw_data function aims to transform the text data from multiple flights into a single csv files.</p>
 
 </div>
 </div>
@@ -13284,6 +13281,14 @@ In some situations, the sources might even be a dozen kilometers away from our p
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above Raw_data function aims to transform the text data from multiple flights into a single csv files.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13406,10 +13411,10 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now comes one of the trickiest part, determining when the glider is thermalling and when he's not. So, how do we identify given rows as part of a single thermal ?</p>
-<p>First, to help you understand, you need to know that thermals are actually quite narrow. To give you an order of magnitude, their diameter is more or less 300 meters. That is why, the fastest way for a glider to climb is to circle as close as possible to the core of the thermal.</p>
+<p>Now comes one of the trickiest parts, determining when the glider is thermalling and when he's not. So, how do we identify given rows as part of a single thermal ?</p>
+<p>First, to help you understand, you need to know that thermals are actually quite narrow. To give you an order of magnitude, their diameter is more or less 300 meters. That is why, the fastest way for a glider to climb is to circle as close as possible to the thermal core.</p>
 <p><img src="circling1.png" width="500"  /></p>
-<p>That being said, it is easy to understand that gliders bearing keep varying while thermalling. In the other hand, while in transition, gliders will only do small course deviations.</p>
+<p>That being said, it is easy to understand that gliders bearing (direction) keep varying while thermalling. In the other hand, while in transition, gliders will only do small course deviations.</p>
 <p>The below images speak for themselves, the warm colors reflect a positive vertical speed while the cold colors reflect a loss in altitude.</p>
 <p>By doing a <strong>rolling standard deviation</strong> on the bearing, we are going to see the dispersion of a limited set of values in time. A high dispersion meaning that the glider is probably thermalling. Now, in order to identify each thermal as unique set of values, we will return 1 for every row labeled as "Transition", and 0 for "Thermall". By making a cumulative sum and adding it to the file name, we will obtain a unique Thermal_id.</p>
 
@@ -13491,7 +13496,7 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Taking in consideration that it takes some time for glider pilots to perfectly center the thermal, we are removing the top 15 rows from every thermal (groupby: thermal_id).</p>
+<p>Taking into consideration that it takes some time for glider pilots to perfectly center a thermal, we are removing the top 15 rows from every thermal (groupby: thermal_id).</p>
 <p>Moreover, a glider pilot can make some mistakes and be thrown out the center. We will remove the row having a negative vertical speed as well.</p>
 
 </div>
@@ -13547,14 +13552,14 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To help us better filter thermal and visualize triggering points, we will determine several characteristics such as:</p>
+<p>To help us better filter thermals and visualize triggering points, we will determine several characteristics such as:</p>
 <ul>
 <li>The average vertical speed of the thermal in meter per second</li>
 <li>The altitude gained</li>
 <li>The overall duration of the given circling phase</li>
 <li>The GPS coordinates of the points where the glider entered and left a given thermal</li>
 </ul>
-<p>To improve the overall precision of our estimated triggering points, we will remove from the dataset all the theramls where the gain in altitude and its duration was below 110 meters or seconds.</p>
+<p>To improve the overall precision of our estimated triggering points, we will remove from the dataset all the thermals where the gain in altitude and its duration were below 110 meters or seconds.</p>
 
 </div>
 </div>
@@ -13651,8 +13656,8 @@ In some situations, the sources might even be a dozen kilometers away from our p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are getting to the core of the problem: identifying the thermal source from a cloud of points in a 3-dimensional space.</p>
-<p>By performing a Singular Value Decomposition we are able to determine the coordinates of the triggering points with a ground altitude set to 300 meters. It is common knowledge that the wind is weaker on a ground level than on altitude. To compensate that matter of fact and make the slope steeper, a higher ground altitude than the real one has been set.</p>
+<p>We are getting close to the core of the problem: identifying a thermal source from a cloud of points in a 3-dimensional space.</p>
+<p>By performing a Singular Value Decomposition, we are able to determine the coordinates of the triggering points with a ground altitude set to 300 meters. It is common knowledge that the wind is weaker on a ground level than on altitude. To compensate that matter of fact and make the slope steeper, a higher ground altitude than the real one has been set.</p>
 
 </div>
 </div>
